@@ -28,6 +28,10 @@
             {% for message in get_flashed_messages() %}
                 <p>{{ message }}</p>
             {% endfor %}
+            
+            {% if current_user.is_authenticated %}
+                <p>You are logged in as {{ current_user.username }}</p>
+            {% endif %}
 
             {% block content %}{% endblock %}
         </div>
